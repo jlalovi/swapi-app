@@ -1,10 +1,12 @@
 import Head from 'next/head';
-import styles from 'styles/Home.module.scss';
 import Header from 'components/Header';
 import PageContainer from 'components/PageContainer';
 import PageContent from 'components/PageContent';
+import usePlanets from 'hooks/usePlanets';
 
 export default function Home() {
+  const { planets, isLoading, error } = usePlanets({ search: '', page: 1 });
+  console.log(planets);
   return (
     <PageContainer>
       <Head>
@@ -15,45 +17,9 @@ export default function Home() {
       <Header title="Planets" />
       <PageContent>
         <ul>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
-          <li>Planets content</li>
+          {planets?.results.map((planet, key) => (
+            <li key={key}>{planet.name}</li>
+          ))}
         </ul>
       </PageContent>
     </PageContainer>
