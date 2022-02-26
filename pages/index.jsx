@@ -1,53 +1,61 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.scss';
+import styles from 'styles/Home.module.scss';
+import Header from 'components/Header';
+import PageContainer from 'components/PageContainer';
+import PageContent from 'components/PageContent';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-      <ul>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-      </ul>
-    </div>
+    <PageContainer>
+      <Head>
+        <title>SWAPI - Planets</title>
+        <meta name="Planets" content="Planets of Star Wars Universe" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header title="Planets" />
+      <PageContent>
+        <ul>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+          <li>Planets content</li>
+        </ul>
+      </PageContent>
+    </PageContainer>
   );
 }
