@@ -1,12 +1,11 @@
 import Head from 'next/head';
-import styles from 'styles/Home.module.scss';
 import Header from 'components/Header';
-import PageContainer from 'components/PageContainer';
+import PageWrapper from 'components/PageWrapper';
 import PageContent from 'components/PageContent';
 
 export default function Home() {
   return (
-    <PageContainer>
+    <PageWrapper>
       <Head>
         <title>SWAPI - Planets</title>
         <meta name="Starships" content="Starships of Star Wars Universe" />
@@ -14,6 +13,6 @@ export default function Home() {
       </Head>
       <Header title="Starships" />
       <PageContent>Starships content</PageContent>
-    </PageContainer>
+    </PageWrapper>
   );
 }

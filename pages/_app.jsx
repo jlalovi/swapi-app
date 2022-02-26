@@ -6,7 +6,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <SWRConfig
       value={{
-        /* refreshInterval: 60000, */
+        // I know that the DB of all the requests is not going to change
+        // frequently, so I improve the performance with less requests and
+        // use the swr cache
+        revalidateIfStale: false,
         fetcher: (...args) => fetch(...args).then((res) => res.json()),
       }}
     >
