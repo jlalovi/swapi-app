@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import '../styles/globals.scss';
+import NavBar from 'components/NavBar';
+import 'styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
     <main className="appContainer">
       <section>
         <nav>
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <NavBar />
         </nav>
         <article className="pageContent">
           <Component {...pageProps} />
