@@ -1,16 +1,44 @@
+header,
+nav,
+article,
+aside,
+footer {
+  border: 1px solid #000;
+}
+
 html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  > section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    > nav {
+      width: 200px;
+    }
+    > article {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      > header {
+        height: 50px;
+      }
+      > section.pageContent {
+        flex-grow: 1;
+        overflow-y: scroll;
+        height: 50px;
+      }
+    }
+  }
+  > footer {
+    height: 25px;
+  }
 }
