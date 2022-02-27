@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
+import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import useVehicles from 'hooks/useVehicles';
 import Pagination from 'components/Pagination';
 
 export default function VehiclesContainer({ search, page, setPage }) {
-  const { vehicles, isLoading, error } = useVehicles({ search, page });
+  const { vehicles, isLoading } = useVehicles({ search, page });
+  useEffect(() => {
+    if (isLoading) {
+      NProgress.start();
+    } else {
+      NProgress.done();
+    }
+  }, [isLoading]);
   return (
     <>
       <ul>

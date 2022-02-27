@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
+import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import usePeople from 'hooks/usePeople';
 import Pagination from 'components/Pagination';
 
 export default function PeopleContainer({ search, page, setPage }) {
-  const { people, isLoading, error } = usePeople({ search, page });
+  const { people, isLoading } = usePeople({ search, page });
+  useEffect(() => {
+    if (isLoading) {
+      NProgress.start();
+    } else {
+      NProgress.done();
+    }
+  }, [isLoading]);
   return (
     <>
       <ul>

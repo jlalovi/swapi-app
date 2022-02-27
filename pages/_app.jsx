@@ -1,6 +1,13 @@
+import PropTypes from 'prop-types';
+import Router from 'next/router';
 import { SWRConfig } from 'swr';
 import NavBar from 'components/NavBar';
 import 'styles/globals.scss';
+import NProgress from 'nprogress';
+
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -29,3 +36,8 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
+MyApp.propTypes = {
+  Component: PropTypes.node,
+  pageProps: PropTypes.any,
+};

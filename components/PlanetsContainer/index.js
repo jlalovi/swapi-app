@@ -1,10 +1,18 @@
+import { useEffect } from 'react';
+import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import usePlanets from 'hooks/usePlanets';
 import Pagination from 'components/Pagination';
 
 export default function PlanetsContainer({ search, page, setPage }) {
-  const { planets, isLoading, error } = usePlanets({ search, page });
-  console.log(planets);
+  const { planets, isLoading } = usePlanets({ search, page });
+  useEffect(() => {
+    if (isLoading) {
+      NProgress.start();
+    } else {
+      NProgress.done();
+    }
+  }, [isLoading]);
   return (
     <>
       <ul>
