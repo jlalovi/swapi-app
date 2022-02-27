@@ -16,7 +16,7 @@ export default function PeopleContainer({ search, page, setPage }) {
   return (
     <>
       <ul>
-        {people?.results.map((planet, key) => (
+        {people?.results?.map((planet, key) => (
           <li key={key}>{planet.name}</li>
         ))}
       </ul>

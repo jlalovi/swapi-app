@@ -3,10 +3,11 @@ import styles from 'styles/Header.module.scss';
 
 export default function Header({ title, children }) {
   return (
-    <>
-      <h1 className={styles.pageHeader}>{title}</h1>
+    <div className={styles.headerContainer}>
+      <header className={styles.header}>Imperial destroyers center</header>
+      <h1 className={styles.title}>{title}</h1>
       {children}
-    </>
+    </div>
   );
 }
 

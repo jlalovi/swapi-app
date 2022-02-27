@@ -16,7 +16,7 @@ export default function PlanetsContainer({ search, page, setPage }) {
   return (
     <>
       <ul>
-        {planets?.results.map((planet, key) => (
+        {planets?.results?.map((planet, key) => (
           <li key={key}>{planet.name}</li>
         ))}
       </ul>

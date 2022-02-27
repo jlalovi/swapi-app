@@ -16,7 +16,7 @@ export default function VehiclesContainer({ search, page, setPage }) {
   return (
     <>
       <ul>
-        {vehicles?.results.map((planet, key) => (
+        {vehicles?.results?.map((planet, key) => (
           <li key={key}>{planet.name}</li>
         ))}
       </ul>
