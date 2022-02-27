@@ -34,6 +34,23 @@ main {
   }
 }
 
+input[type='text'],
+select {
+  width: 100%;
+  max-width: 200px;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+input[type='text']:focus {
+  border-color: dodgerBlue;
+  box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
 /* custom scrollbar */
 ::-webkit-scrollbar {
   width: 20px;
@@ -74,4 +91,11 @@ main {
   -webkit-transform: rotate(3deg) translate(0px, -4px);
   -ms-transform: rotate(3deg) translate(0px, -4px);
   transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Utils */
+.inlineBlockChildren {
+  > * {
+    display: inline-block;
+  }
 }

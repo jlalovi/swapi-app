@@ -21,17 +21,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header title="Starships">
-        {searchStarshipsInput}
-        <select
-          value={sortValue}
-          onChange={(e) => setSortValue(e.currentTarget.value)}
-        >
-          {vehicleSortOptions.map((sortOption) => (
-            <option key={sortOption.value} value={sortOption.value}>
-              {sortOption.label}
-            </option>
-          ))}
-        </select>
+        <div className="inlineBlockChildren">
+          {searchStarshipsInput}
+          <select
+            value={sortValue}
+            onChange={(e) => setSortValue(e.currentTarget.value)}
+          >
+            {vehicleSortOptions.map((sortOption) => (
+              <option key={sortOption.value} value={sortOption.value}>
+                {sortOption.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </Header>
       <PageContent>
         <StarshipsContainer
