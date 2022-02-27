@@ -1,9 +1,10 @@
-$progress-bar-height: 5px;
+@import './variables';
 
 nav,
 article,
 footer {
-  border: 1px solid #000;
+  border: 1px solid $lightSide;
+  border-top: none;
 }
 
 html,
@@ -11,6 +12,12 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: $lightSide;
+  background: $darkSide;
+}
+
+p {
+  margin: 0;
 }
 
 main {
@@ -24,15 +31,14 @@ main {
     flex-wrap: nowrap;
     overflow: hidden;
     padding-top: $progress-bar-height;
-    > nav {
-      width: 200px;
-    }
     > article.pageContent {
       flex-grow: 1;
     }
   }
   > footer {
-    height: 25px;
+    text-align: right;
+    padding: 4px 8px;
+    background: $darkerSide;
   }
 }
 
@@ -40,7 +46,9 @@ input[type='text'],
 select {
   width: 100%;
   max-width: 200px;
-  border: 2px solid #aaa;
+  border: 2px solid $lightSide;
+  background: black;
+  color: $lightSide;
   border-radius: 4px;
   margin: 8px;
   outline: none;
@@ -48,9 +56,10 @@ select {
   box-sizing: border-box;
   transition: 0.3s;
 }
-input[type='text']:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
+input[type='text']:focus,
+select:focus {
+  border-color: $ominousRed;
+  box-shadow: 0 0 8px 0 $ominousRed;
 }
 
 /* custom scrollbar */
@@ -61,13 +70,13 @@ input[type='text']:focus {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
+  background-color: $lightSide;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a8bbbf;
+  background-color: $yellow;
 }
 
 /* Progress bar */
@@ -75,7 +84,7 @@ input[type='text']:focus {
   pointer-events: none;
 }
 #nprogress .bar {
-  background: #95c8c8;
+  background: $yellow;
   position: fixed;
   z-index: 1031;
   top: 0px;

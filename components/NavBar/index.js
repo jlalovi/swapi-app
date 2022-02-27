@@ -1,43 +1,54 @@
 import styles from 'styles/NavBar.module.scss';
-import Image from 'next/image';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { GiPlanetCore, GiSpaceship } from 'react-icons/gi';
+import { FaUsers, FaShuttleVan } from 'react-icons/fa';
 
 const navItems = [
   {
     label: 'Planets',
     route: '/',
-    icon: '',
+    icon: <GiPlanetCore />,
   },
   {
     label: 'Starships',
     route: '/starships',
-    icon: '',
+    icon: <GiSpaceship />,
   },
   {
     label: 'People',
     route: '/people',
-    icon: '',
+    icon: <FaUsers />,
   },
   {
     label: 'Vehicles',
     route: '/vehicles',
-    icon: '',
+    icon: <FaShuttleVan />,
   },
 ];
 
 export default function NavBar() {
+  const router = useRouter();
+  const { route } = router;
   return (
-    <>
-      <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-      <ul>
+    <div className={styles.container}>
+      <p className={styles.logo}>SWAPI APP</p>
+      <ul className={styles.navList}>
         {navItems.map((navItem, key) => (
           <li key={key}>
             <Link href={navItem.route}>
-              <h1 title={navItem.label}>{navItem.label}</h1>
+              <p
+                className={`${styles.label} ${
+                  route === navItem.route ? styles.selected : ''
+                }`}
+              >
+                <span className={styles.icon}>{navItem.icon}</span>
+                <span className={styles.text}>{navItem.label}</span>
+              </p>
             </Link>
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

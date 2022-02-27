@@ -29,7 +29,9 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </article>
         </section>
-        <footer>Footer</footer>
+        <footer>
+          Made by <i>Javier Latorre López-Villalta</i>
+        </footer>
       </main>
     </SWRConfig>
   );
