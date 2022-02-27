@@ -3,6 +3,7 @@ import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import useVehicles from 'hooks/useVehicles';
 import Pagination from 'components/Pagination';
+import Card from 'components/Card';
 
 export default function VehiclesContainer({ search, page, setPage }) {
   const { vehicles, isLoading } = useVehicles({ search, page });
@@ -16,8 +17,8 @@ export default function VehiclesContainer({ search, page, setPage }) {
   return (
     <>
       <ul>
-        {vehicles?.results?.map((planet, key) => (
-          <li key={key}>{planet.name}</li>
+        {vehicles?.results?.map((vehicle, key) => (
+          <Card key={key} type="vehicles" data={vehicle} />
         ))}
       </ul>
       {vehicles && (

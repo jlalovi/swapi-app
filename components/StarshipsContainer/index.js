@@ -3,6 +3,7 @@ import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import useStarships from 'hooks/useStarships';
 import Pagination from 'components/Pagination';
+import Card from 'components/Card';
 import { sortStarships } from './sortStarships';
 
 export default function StarshipsContainer({
@@ -27,8 +28,8 @@ export default function StarshipsContainer({
   return (
     <>
       <ul>
-        {sortedStarships.map((planet, key) => (
-          <li key={key}>{planet.name}</li>
+        {sortedStarships.map((starship, key) => (
+          <Card key={key} type="starships" data={starship} />
         ))}
       </ul>
       {starships && (

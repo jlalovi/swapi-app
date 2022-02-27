@@ -3,6 +3,7 @@ import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import usePeople from 'hooks/usePeople';
 import Pagination from 'components/Pagination';
+import Card from 'components/Card';
 
 export default function PeopleContainer({ search, page, setPage }) {
   const { people, isLoading } = usePeople({ search, page });
@@ -16,8 +17,8 @@ export default function PeopleContainer({ search, page, setPage }) {
   return (
     <>
       <ul>
-        {people?.results?.map((planet, key) => (
-          <li key={key}>{planet.name}</li>
+        {people?.results?.map((person, key) => (
+          <Card key={key} type="people" data={person} />
         ))}
       </ul>
       {people && (

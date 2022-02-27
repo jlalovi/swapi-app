@@ -16,7 +16,9 @@ body {
   background: $darkSide;
 }
 
-p {
+p,
+h1,
+h2 {
   margin: 0;
 }
 ul {
@@ -114,4 +116,7 @@ select:focus {
   > * {
     display: inline-block;
   }
+}
+.capitalize {
+  text-transform: capitalize;
 }
