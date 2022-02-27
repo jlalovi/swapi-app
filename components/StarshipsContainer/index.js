@@ -3,8 +3,14 @@ import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import useStarships from 'hooks/useStarships';
 import Pagination from 'components/Pagination';
+import { sortStarships } from './sortStarships';
 
-export default function StarshipsContainer({ search, page, setPage }) {
+export default function StarshipsContainer({
+  search,
+  page,
+  setPage,
+  sortValue,
+}) {
   const { starships, isLoading } = useStarships({ search, page });
   useEffect(() => {
     if (isLoading) {
@@ -13,10 +19,15 @@ export default function StarshipsContainer({ search, page, setPage }) {
       NProgress.done();
     }
   }, [isLoading]);
+
+  const sortedStarships = starships?.results
+    ? sortStarships(starships.results, sortValue)
+    : [];
+
   return (
     <>
       <ul>
-        {starships?.results.map((planet, key) => (
+        {sortedStarships.map((planet, key) => (
           <li key={key}>{planet.name}</li>
         ))}
       </ul>
@@ -39,4 +50,5 @@ StarshipsContainer.propTypes = {
   search: PropTypes.string.isRequired,
   page: PropTypes.number.isRequired,
   setPage: PropTypes.func.isRequired,
+  sortValue: PropTypes.string.isRequired,
 };

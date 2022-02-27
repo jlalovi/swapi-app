@@ -1,3 +1,5 @@
+$progress-bar-height: 5px;
+
 nav,
 article,
 footer {
@@ -19,6 +21,7 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow: hidden;
+    padding-top: $progress-bar-height;
     > nav {
       width: 200px;
     }
@@ -59,7 +62,7 @@ main {
   top: 0px;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: $progress-bar-height;
 }
 #nprogress .peg {
   display: block;
