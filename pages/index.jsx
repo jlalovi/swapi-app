@@ -10,7 +10,7 @@ export default function Home() {
   const [planetSearchValue, searchPlanetInput] = useInput({
     placeholder: 'search planet',
   });
-  const [page, setPage] = useState(1); // TODO create hook for pagination
+  const [page, setPage] = useState(1);
   return (
     <PageWrapper>
       <Head>
@@ -20,7 +20,11 @@ export default function Home() {
       </Head>
       <Header title="Planets">{searchPlanetInput}</Header>
       <PageContent>
-        <PlanetsContainer search={planetSearchValue} page={page} />
+        <PlanetsContainer
+          search={planetSearchValue}
+          page={page}
+          setPage={setPage}
+        />
       </PageContent>
     </PageWrapper>
   );

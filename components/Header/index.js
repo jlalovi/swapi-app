@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from 'styles/Header.module.scss';
 
 export default function Header({ title, children }) {
@@ -8,3 +9,8 @@ export default function Header({ title, children }) {
     </>
   );
 }
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
