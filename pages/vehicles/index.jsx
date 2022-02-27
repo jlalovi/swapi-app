@@ -16,7 +16,7 @@ export default function Home() {
       <Head>
         <title>SWAPI - Vehicles</title>
         <meta name="Vehicles" content="Vehicles of Star Wars Universe" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicons/vehicles.ico" />
       </Head>
       <Header title="Vehicles">{searchVehiclesInput}</Header>
       <PageContent>

@@ -16,7 +16,7 @@ export default function Home() {
       <Head>
         <title>SWAPI - People</title>
         <meta name="People" content="Main characters of Star Wars Universe" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicons/people.ico" />
       </Head>
       <Header title="People">{searchPeopleInput}</Header>
       <PageContent>

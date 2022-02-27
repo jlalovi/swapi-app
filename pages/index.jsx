@@ -16,7 +16,7 @@ export default function Home() {
       <Head>
         <title>SWAPI - Planets</title>
         <meta name="Planets" content="Planets of Star Wars Universe" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicons/planets.ico" />
       </Head>
       <Header title="Planets">{searchPlanetInput}</Header>
       <PageContent>

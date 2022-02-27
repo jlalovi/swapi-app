@@ -18,7 +18,7 @@ export default function Home() {
       <Head>
         <title>SWAPI - Starships</title>
         <meta name="Starships" content="Starships of Star Wars Universe" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicons/starships.ico" />
       </Head>
       <Header title="Starships">
         <div className="inlineBlockChildren">
