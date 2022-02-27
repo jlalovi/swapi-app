@@ -1,3 +1,11 @@
+/* eslint-disable no-restricted-globals */
+function toNumberIfPossible(item) {
+  if (isNaN(item)) {
+    return String(item).toLowerCase();
+  }
+  return Number(item);
+}
+
 function sortObjects(
   items, // Array of objects
   itemKeyToCompare, // string
@@ -8,11 +16,11 @@ function sortObjects(
     const itemA =
       typeof a[itemKeyToCompare] === 'number'
         ? a[itemKeyToCompare]
-        : String(a[itemKeyToCompare]).toLowerCase();
+        : toNumberIfPossible(a[itemKeyToCompare]);
     const itemB =
       typeof b[itemKeyToCompare] === 'number'
         ? b[itemKeyToCompare]
-        : String(b[itemKeyToCompare]).toLowerCase();
+        : toNumberIfPossible(b[itemKeyToCompare]);
 
     if (sortType === 'asc') {
       if (itemA < itemB) return -1;
