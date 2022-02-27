@@ -14,12 +14,26 @@ export default function Pagination({
   const nPages = Math.ceil(totalItems / itemsInPage);
 
   return (
-    <div>
-      {previous && <AiFillCaretLeft onClick={() => setPage(page - 1)} />}
+    <div className={styles.paginationContainer}>
+      {previous ? (
+        <AiFillCaretLeft
+          className={styles.icon}
+          onClick={() => setPage(page - 1)}
+        />
+      ) : (
+        <AiFillCaretLeft className={styles.invisibleIcon} />
+      )}
       <span
         className={styles.legend}
       >{`${page} to ${nPages} of ${totalItems} ${itemsName}`}</span>
-      {next && <AiFillCaretRight onClick={() => setPage(page + 1)} />}
+      {next ? (
+        <AiFillCaretRight
+          className={styles.icon}
+          onClick={() => setPage(page + 1)}
+        />
+      ) : (
+        <AiFillCaretRight className={styles.invisibleIcon} />
+      )}
     </div>
   );
 }

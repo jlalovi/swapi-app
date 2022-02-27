@@ -1,2 +1,18 @@
-.pageHeader {
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.legend {
+  margin: 10px;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.invisibleIcon {
+  color: transparent;
 }
