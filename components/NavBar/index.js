@@ -35,7 +35,7 @@ export default function NavBar() {
       <p className={styles.logo}>SWAPI APP</p>
       <ul className={styles.navList}>
         {navItems.map((navItem, key) => (
-          <li key={key}>
+          <li key={key} title={navItem.label}>
             <Link href={navItem.route}>
               <p
                 className={`${styles.label} ${
