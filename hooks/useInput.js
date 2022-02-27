@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 const useInput = ({ type = 'text', placeholder }) => {
   const [value, setValue] = useState('');
   const input = (
