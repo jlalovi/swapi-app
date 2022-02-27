@@ -3,6 +3,7 @@ import NProgress from 'nprogress';
 import PropTypes from 'prop-types';
 import usePlanets from 'hooks/usePlanets';
 import Pagination from 'components/Pagination';
+import Card from 'components/Card';
 
 export default function PlanetsContainer({ search, page, setPage }) {
   const { planets, isLoading } = usePlanets({ search, page });
@@ -17,7 +18,7 @@ export default function PlanetsContainer({ search, page, setPage }) {
     <>
       <ul>
         {planets?.results?.map((planet, key) => (
-          <li key={key}>{planet.name}</li>
+          <Card key={key} type="planets" data={planet} />
         ))}
       </ul>
       {planets && (

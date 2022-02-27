@@ -1,3 +1,5 @@
+@import './variables';
+
 .pageContent {
   display: flex;
   flex-direction: column;
@@ -6,5 +8,48 @@
   > ul {
     flex-grow: 1;
     overflow-y: scroll;
+    display: grid;
+    grid-template-columns: $card-width;
+    justify-content: space-around;
+    align-content: start;
+  }
+}
+
+@media (min-width: 840px) {
+  .pageContent {
+    > ul {
+      grid-template-columns: $card-width $card-width;
+    }
+  }
+}
+@media (min-width: 1120px) {
+  .pageContent {
+    > ul {
+      grid-template-columns: $card-width $card-width $card-width;
+    }
+  }
+}
+
+@media (min-width: 1420px) {
+  .pageContent {
+    > ul {
+      grid-template-columns: $card-width $card-width $card-width $card-width;
+    }
+  }
+}
+
+@media (min-width: 1720px) {
+  .pageContent {
+    > ul {
+      grid-template-columns: $card-width $card-width $card-width $card-width $card-width;
+    }
+  }
+}
+
+@media (min-width: 2200px) {
+  .pageContent {
+    > ul {
+      grid-template-columns: $card-width $card-width $card-width $card-width $card-width $card-width;
+    }
   }
 }

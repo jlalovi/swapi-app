@@ -1,0 +1,9 @@
+@import './variables';
+
+.itemList {
+  border: solid 1px gray;
+  margin-left: 4px;
+  margin-bottom: 20px;
+  display: block;
+  width: $card-width;
+}
