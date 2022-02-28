@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 import PropTypes from 'prop-types';
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 import styles from 'styles/Pagination.module.scss';
@@ -19,6 +20,7 @@ export default function Pagination({
         <AiFillCaretLeft
           className={styles.icon}
           onClick={() => setPage(page - 1)}
+          role="previous-page-button"
         />
       ) : (
         <AiFillCaretLeft className={styles.invisibleIcon} />
@@ -30,6 +32,7 @@ export default function Pagination({
         <AiFillCaretRight
           className={styles.icon}
           onClick={() => setPage(page + 1)}
+          role="next-page-button"
         />
       ) : (
         <AiFillCaretRight className={styles.invisibleIcon} />
