@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 import PropTypes from 'prop-types';
 import styles from 'styles/Card.module.scss';
 import ImageFallback from 'components/ImageFallback';
@@ -32,7 +33,10 @@ export default function Card({ data, type }) {
               }`}
               <br />
               {data.residents.map(() => (
-                <FaUserCircle className={styles.icon} />
+                <FaUserCircle
+                  role="special-character"
+                  className={styles.icon}
+                />
               ))}
             </p>
           </>
